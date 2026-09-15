@@ -1,0 +1,77 @@
+# ============================================================
+# Fruit YOLO - Baseline
+# Model: YOLO11s
+# Task: Detect
+# ============================================================
+
+# ----------------------------
+# Model / Data
+# ----------------------------
+model: E:/workspace/01_Projects/AI_Vision_Learning/Fruit_YOLO/yolo11s.pt
+
+data: E:/workspace/01_Projects/AI_Vision_Learning/Fruit_YOLO/data/dataset.yaml
+
+# ----------------------------
+# Training
+# ----------------------------
+epochs: 100
+imgsz: 640
+batch: 8
+workers: 4
+device: 0
+
+# ----------------------------
+# Optimizer
+# ----------------------------
+optimizer: auto
+
+# ----------------------------
+# Reproducibility
+# ----------------------------
+seed: 42
+deterministic: true
+
+# ----------------------------
+# Training behavior
+# ----------------------------
+patience: 30
+save: true
+save_period: -1
+cache: false
+amp: true
+
+# ----------------------------
+# Validation
+# ----------------------------
+val: true
+plots: true
+
+# ----------------------------
+# Augmentation
+# 保持 Ultralytics baseline 默认增强，
+# 第一轮不主动堆复杂增强
+# ----------------------------
+hsv_h: 0.015
+hsv_s: 0.7
+hsv_v: 0.4
+
+degrees: 0.0
+translate: 0.1
+scale: 0.5
+shear: 0.0
+perspective: 0.0
+
+flipud: 0.0
+fliplr: 0.5
+
+mosaic: 1.0
+mixup: 0.0
+copy_paste: 0.0
+
+# ----------------------------
+# Output
+# ----------------------------
+project: E:/workspace/01_Projects/AI_Vision_Learning/Fruit_YOLO/runs/detect
+name: baseline_yolo11s_640
+
+exist_ok: false
